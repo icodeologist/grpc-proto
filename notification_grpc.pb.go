@@ -39,7 +39,7 @@ type NotificationserviceClient interface {
 	// disaster api sends the request
 	// along with the data required for sending notiifications
 	// this way i can send and req and reciecve response and also send the  required data
-	Sendnotiificationacceptingdisasterapidata(ctx context.Context, opts ...grpc.CallOption) (grpc.ClientStreamingClient[Notificationrequestwithdata, Batchnotificationresponse], error)
+	Sendnotiificationacceptingdisasterapidata(ctx context.Context, opts ...grpc.CallOption) (grpc.ClientStreamingClient[Notificationrequestwithdata, Newbatchnotificationresponse], error)
 }
 
 type notificationserviceClient struct {
@@ -83,18 +83,18 @@ func (c *notificationserviceClient) Healthcheck(ctx context.Context, in *Healthc
 	return out, nil
 }
 
-func (c *notificationserviceClient) Sendnotiificationacceptingdisasterapidata(ctx context.Context, opts ...grpc.CallOption) (grpc.ClientStreamingClient[Notificationrequestwithdata, Batchnotificationresponse], error) {
+func (c *notificationserviceClient) Sendnotiificationacceptingdisasterapidata(ctx context.Context, opts ...grpc.CallOption) (grpc.ClientStreamingClient[Notificationrequestwithdata, Newbatchnotificationresponse], error) {
 	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
 	stream, err := c.cc.NewStream(ctx, &Notificationservice_ServiceDesc.Streams[1], Notificationservice_Sendnotiificationacceptingdisasterapidata_FullMethodName, cOpts...)
 	if err != nil {
 		return nil, err
 	}
-	x := &grpc.GenericClientStream[Notificationrequestwithdata, Batchnotificationresponse]{ClientStream: stream}
+	x := &grpc.GenericClientStream[Notificationrequestwithdata, Newbatchnotificationresponse]{ClientStream: stream}
 	return x, nil
 }
 
 // This type alias is provided for backwards compatibility with existing code that references the prior non-generic stream type by name.
-type Notificationservice_SendnotiificationacceptingdisasterapidataClient = grpc.ClientStreamingClient[Notificationrequestwithdata, Batchnotificationresponse]
+type Notificationservice_SendnotiificationacceptingdisasterapidataClient = grpc.ClientStreamingClient[Notificationrequestwithdata, Newbatchnotificationresponse]
 
 // NotificationserviceServer is the server API for Notificationservice service.
 // All implementations must embed UnimplementedNotificationserviceServer
@@ -110,7 +110,7 @@ type NotificationserviceServer interface {
 	// disaster api sends the request
 	// along with the data required for sending notiifications
 	// this way i can send and req and reciecve response and also send the  required data
-	Sendnotiificationacceptingdisasterapidata(grpc.ClientStreamingServer[Notificationrequestwithdata, Batchnotificationresponse]) error
+	Sendnotiificationacceptingdisasterapidata(grpc.ClientStreamingServer[Notificationrequestwithdata, Newbatchnotificationresponse]) error
 	mustEmbedUnimplementedNotificationserviceServer()
 }
 
@@ -130,7 +130,7 @@ func (UnimplementedNotificationserviceServer) Sendbatchnotification(grpc.ClientS
 func (UnimplementedNotificationserviceServer) Healthcheck(context.Context, *Healthcheckrequest) (*Healthcheckresponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method Healthcheck not implemented")
 }
-func (UnimplementedNotificationserviceServer) Sendnotiificationacceptingdisasterapidata(grpc.ClientStreamingServer[Notificationrequestwithdata, Batchnotificationresponse]) error {
+func (UnimplementedNotificationserviceServer) Sendnotiificationacceptingdisasterapidata(grpc.ClientStreamingServer[Notificationrequestwithdata, Newbatchnotificationresponse]) error {
 	return status.Errorf(codes.Unimplemented, "method Sendnotiificationacceptingdisasterapidata not implemented")
 }
 func (UnimplementedNotificationserviceServer) mustEmbedUnimplementedNotificationserviceServer() {}
@@ -198,11 +198,11 @@ func _Notificationservice_Healthcheck_Handler(srv interface{}, ctx context.Conte
 }
 
 func _Notificationservice_Sendnotiificationacceptingdisasterapidata_Handler(srv interface{}, stream grpc.ServerStream) error {
-	return srv.(NotificationserviceServer).Sendnotiificationacceptingdisasterapidata(&grpc.GenericServerStream[Notificationrequestwithdata, Batchnotificationresponse]{ServerStream: stream})
+	return srv.(NotificationserviceServer).Sendnotiificationacceptingdisasterapidata(&grpc.GenericServerStream[Notificationrequestwithdata, Newbatchnotificationresponse]{ServerStream: stream})
 }
 
 // This type alias is provided for backwards compatibility with existing code that references the prior non-generic stream type by name.
-type Notificationservice_SendnotiificationacceptingdisasterapidataServer = grpc.ClientStreamingServer[Notificationrequestwithdata, Batchnotificationresponse]
+type Notificationservice_SendnotiificationacceptingdisasterapidataServer = grpc.ClientStreamingServer[Notificationrequestwithdata, Newbatchnotificationresponse]
 
 // Notificationservice_ServiceDesc is the grpc.ServiceDesc for Notificationservice service.
 // It's only intended for direct use with grpc.RegisterService,

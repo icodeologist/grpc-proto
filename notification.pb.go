@@ -120,7 +120,7 @@ func (x HealthcheckresponseCheckhealthstatuses) Number() protoreflect.EnumNumber
 
 // Deprecated: Use HealthcheckresponseCheckhealthstatuses.Descriptor instead.
 func (HealthcheckresponseCheckhealthstatuses) EnumDescriptor() ([]byte, []int) {
-	return file_proto_notification_proto_rawDescGZIP(), []int{4, 0}
+	return file_proto_notification_proto_rawDescGZIP(), []int{5, 0}
 }
 
 // defining the variables
@@ -337,6 +337,82 @@ func (x *Batchnotificationresponse) GetFailedUserPhoneNumbers() []string {
 	return nil
 }
 
+type Newbatchnotificationresponse struct {
+	state            protoimpl.MessageState `protogen:"open.v1"`
+	TotalSent        int32                  `protobuf:"varint,1,opt,name=total_sent,json=totalSent,proto3" json:"total_sent,omitempty"`
+	Success          int32                  `protobuf:"varint,2,opt,name=success,proto3" json:"success,omitempty"`
+	Failed           int32                  `protobuf:"varint,3,opt,name=failed,proto3" json:"failed,omitempty"`
+	FailedUserEmails []string               `protobuf:"bytes,4,rep,name=failed_user_emails,json=failedUserEmails,proto3" json:"failed_user_emails,omitempty"`
+	FailedPhoneNums  []string               `protobuf:"bytes,5,rep,name=failed_phone_nums,json=failedPhoneNums,proto3" json:"failed_phone_nums,omitempty"`
+	unknownFields    protoimpl.UnknownFields
+	sizeCache        protoimpl.SizeCache
+}
+
+func (x *Newbatchnotificationresponse) Reset() {
+	*x = Newbatchnotificationresponse{}
+	mi := &file_proto_notification_proto_msgTypes[3]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *Newbatchnotificationresponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*Newbatchnotificationresponse) ProtoMessage() {}
+
+func (x *Newbatchnotificationresponse) ProtoReflect() protoreflect.Message {
+	mi := &file_proto_notification_proto_msgTypes[3]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use Newbatchnotificationresponse.ProtoReflect.Descriptor instead.
+func (*Newbatchnotificationresponse) Descriptor() ([]byte, []int) {
+	return file_proto_notification_proto_rawDescGZIP(), []int{3}
+}
+
+func (x *Newbatchnotificationresponse) GetTotalSent() int32 {
+	if x != nil {
+		return x.TotalSent
+	}
+	return 0
+}
+
+func (x *Newbatchnotificationresponse) GetSuccess() int32 {
+	if x != nil {
+		return x.Success
+	}
+	return 0
+}
+
+func (x *Newbatchnotificationresponse) GetFailed() int32 {
+	if x != nil {
+		return x.Failed
+	}
+	return 0
+}
+
+func (x *Newbatchnotificationresponse) GetFailedUserEmails() []string {
+	if x != nil {
+		return x.FailedUserEmails
+	}
+	return nil
+}
+
+func (x *Newbatchnotificationresponse) GetFailedPhoneNums() []string {
+	if x != nil {
+		return x.FailedPhoneNums
+	}
+	return nil
+}
+
 type Healthcheckrequest struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	Serivice      string                 `protobuf:"bytes,1,opt,name=serivice,proto3" json:"serivice,omitempty"`
@@ -346,7 +422,7 @@ type Healthcheckrequest struct {
 
 func (x *Healthcheckrequest) Reset() {
 	*x = Healthcheckrequest{}
-	mi := &file_proto_notification_proto_msgTypes[3]
+	mi := &file_proto_notification_proto_msgTypes[4]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -358,7 +434,7 @@ func (x *Healthcheckrequest) String() string {
 func (*Healthcheckrequest) ProtoMessage() {}
 
 func (x *Healthcheckrequest) ProtoReflect() protoreflect.Message {
-	mi := &file_proto_notification_proto_msgTypes[3]
+	mi := &file_proto_notification_proto_msgTypes[4]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -371,7 +447,7 @@ func (x *Healthcheckrequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use Healthcheckrequest.ProtoReflect.Descriptor instead.
 func (*Healthcheckrequest) Descriptor() ([]byte, []int) {
-	return file_proto_notification_proto_rawDescGZIP(), []int{3}
+	return file_proto_notification_proto_rawDescGZIP(), []int{4}
 }
 
 func (x *Healthcheckrequest) GetSerivice() string {
@@ -390,7 +466,7 @@ type Healthcheckresponse struct {
 
 func (x *Healthcheckresponse) Reset() {
 	*x = Healthcheckresponse{}
-	mi := &file_proto_notification_proto_msgTypes[4]
+	mi := &file_proto_notification_proto_msgTypes[5]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -402,7 +478,7 @@ func (x *Healthcheckresponse) String() string {
 func (*Healthcheckresponse) ProtoMessage() {}
 
 func (x *Healthcheckresponse) ProtoReflect() protoreflect.Message {
-	mi := &file_proto_notification_proto_msgTypes[4]
+	mi := &file_proto_notification_proto_msgTypes[5]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -415,7 +491,7 @@ func (x *Healthcheckresponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use Healthcheckresponse.ProtoReflect.Descriptor instead.
 func (*Healthcheckresponse) Descriptor() ([]byte, []int) {
-	return file_proto_notification_proto_rawDescGZIP(), []int{4}
+	return file_proto_notification_proto_rawDescGZIP(), []int{5}
 }
 
 func (x *Healthcheckresponse) GetStatus() HealthcheckresponseCheckhealthstatuses {
@@ -439,7 +515,7 @@ type Notificationrequestwithdata struct {
 
 func (x *Notificationrequestwithdata) Reset() {
 	*x = Notificationrequestwithdata{}
-	mi := &file_proto_notification_proto_msgTypes[5]
+	mi := &file_proto_notification_proto_msgTypes[6]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -451,7 +527,7 @@ func (x *Notificationrequestwithdata) String() string {
 func (*Notificationrequestwithdata) ProtoMessage() {}
 
 func (x *Notificationrequestwithdata) ProtoReflect() protoreflect.Message {
-	mi := &file_proto_notification_proto_msgTypes[5]
+	mi := &file_proto_notification_proto_msgTypes[6]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -464,7 +540,7 @@ func (x *Notificationrequestwithdata) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use Notificationrequestwithdata.ProtoReflect.Descriptor instead.
 func (*Notificationrequestwithdata) Descriptor() ([]byte, []int) {
-	return file_proto_notification_proto_rawDescGZIP(), []int{5}
+	return file_proto_notification_proto_rawDescGZIP(), []int{6}
 }
 
 func (x *Notificationrequestwithdata) GetUserEmail() string {
@@ -530,7 +606,14 @@ const file_proto_notification_proto_rawDesc = "" +
 	"\asuccess\x18\x02 \x01(\x05R\asuccess\x12\x16\n" +
 	"\x06failed\x18\x03 \x01(\x05R\x06failed\x12,\n" +
 	"\x12failed_user_emails\x18\x04 \x03(\tR\x10failedUserEmails\x129\n" +
-	"\x19failed_user_phone_numbers\x18\x05 \x03(\tR\x16failedUserPhoneNumbers\"0\n" +
+	"\x19failed_user_phone_numbers\x18\x05 \x03(\tR\x16failedUserPhoneNumbers\"\xc9\x01\n" +
+	"\x1cnewbatchnotificationresponse\x12\x1d\n" +
+	"\n" +
+	"total_sent\x18\x01 \x01(\x05R\ttotalSent\x12\x18\n" +
+	"\asuccess\x18\x02 \x01(\x05R\asuccess\x12\x16\n" +
+	"\x06failed\x18\x03 \x01(\x05R\x06failed\x12,\n" +
+	"\x12failed_user_emails\x18\x04 \x03(\tR\x10failedUserEmails\x12*\n" +
+	"\x11failed_phone_nums\x18\x05 \x03(\tR\x0ffailedPhoneNums\"0\n" +
 	"\x12healthcheckrequest\x12\x1a\n" +
 	"\bserivice\x18\x01 \x01(\tR\bserivice\"\xae\x01\n" +
 	"\x13healthcheckresponse\x12V\n" +
@@ -553,12 +636,12 @@ const file_proto_notification_proto_rawDesc = "" +
 	"\aunknown\x10\x00\x12\t\n" +
 	"\x05email\x10\x01\x12\a\n" +
 	"\x03sms\x10\x02\x12\b\n" +
-	"\x04push\x10\x032\xf7\x03\n" +
+	"\x04push\x10\x032\xfa\x03\n" +
 	"\x13notificationservice\x12k\n" +
 	"\x10sendnotification\x12*.notificitationservice.notificationrequest\x1a+.notificitationservice.notificationresponse\x12w\n" +
 	"\x15sendbatchnotification\x12*.notificitationservice.notificationrequest\x1a0.notificitationservice.batchnotificationresponse(\x01\x12d\n" +
-	"\vhealthcheck\x12).notificitationservice.healthcheckrequest\x1a*.notificitationservice.healthcheckresponse\x12\x93\x01\n" +
-	")sendnotiificationacceptingdisasterapidata\x122.notificitationservice.notificationrequestwithdata\x1a0.notificitationservice.batchnotificationresponse(\x01B\tZ\a./protob\x06proto3"
+	"\vhealthcheck\x12).notificitationservice.healthcheckrequest\x1a*.notificitationservice.healthcheckresponse\x12\x96\x01\n" +
+	")sendnotiificationacceptingdisasterapidata\x122.notificitationservice.notificationrequestwithdata\x1a3.notificitationservice.newbatchnotificationresponse(\x01B\tZ\a./protob\x06proto3"
 
 var (
 	file_proto_notification_proto_rawDescOnce sync.Once
@@ -573,32 +656,33 @@ func file_proto_notification_proto_rawDescGZIP() []byte {
 }
 
 var file_proto_notification_proto_enumTypes = make([]protoimpl.EnumInfo, 2)
-var file_proto_notification_proto_msgTypes = make([]protoimpl.MessageInfo, 6)
+var file_proto_notification_proto_msgTypes = make([]protoimpl.MessageInfo, 7)
 var file_proto_notification_proto_goTypes = []any{
 	(Notificationtype)(0),                       // 0: notificitationservice.notificationtype
 	(HealthcheckresponseCheckhealthstatuses)(0), // 1: notificitationservice.healthcheckresponse.checkhealthstatuses
 	(*Notificationrequest)(nil),                 // 2: notificitationservice.notificationrequest
 	(*Notificationresponse)(nil),                // 3: notificitationservice.notificationresponse
 	(*Batchnotificationresponse)(nil),           // 4: notificitationservice.batchnotificationresponse
-	(*Healthcheckrequest)(nil),                  // 5: notificitationservice.healthcheckrequest
-	(*Healthcheckresponse)(nil),                 // 6: notificitationservice.healthcheckresponse
-	(*Notificationrequestwithdata)(nil),         // 7: notificitationservice.notificationrequestwithdata
-	(*timestamppb.Timestamp)(nil),               // 8: google.protobuf.Timestamp
+	(*Newbatchnotificationresponse)(nil),        // 5: notificitationservice.newbatchnotificationresponse
+	(*Healthcheckrequest)(nil),                  // 6: notificitationservice.healthcheckrequest
+	(*Healthcheckresponse)(nil),                 // 7: notificitationservice.healthcheckresponse
+	(*Notificationrequestwithdata)(nil),         // 8: notificitationservice.notificationrequestwithdata
+	(*timestamppb.Timestamp)(nil),               // 9: google.protobuf.Timestamp
 }
 var file_proto_notification_proto_depIdxs = []int32{
-	8, // 0: notificitationservice.notificationrequest.timestamp:type_name -> google.protobuf.Timestamp
+	9, // 0: notificitationservice.notificationrequest.timestamp:type_name -> google.protobuf.Timestamp
 	0, // 1: notificitationservice.notificationrequest.type:type_name -> notificitationservice.notificationtype
 	1, // 2: notificitationservice.healthcheckresponse.status:type_name -> notificitationservice.healthcheckresponse.checkhealthstatuses
-	8, // 3: notificitationservice.notificationrequestwithdata.timestamp:type_name -> google.protobuf.Timestamp
+	9, // 3: notificitationservice.notificationrequestwithdata.timestamp:type_name -> google.protobuf.Timestamp
 	0, // 4: notificitationservice.notificationrequestwithdata.type:type_name -> notificitationservice.notificationtype
 	2, // 5: notificitationservice.notificationservice.sendnotification:input_type -> notificitationservice.notificationrequest
 	2, // 6: notificitationservice.notificationservice.sendbatchnotification:input_type -> notificitationservice.notificationrequest
-	5, // 7: notificitationservice.notificationservice.healthcheck:input_type -> notificitationservice.healthcheckrequest
-	7, // 8: notificitationservice.notificationservice.sendnotiificationacceptingdisasterapidata:input_type -> notificitationservice.notificationrequestwithdata
+	6, // 7: notificitationservice.notificationservice.healthcheck:input_type -> notificitationservice.healthcheckrequest
+	8, // 8: notificitationservice.notificationservice.sendnotiificationacceptingdisasterapidata:input_type -> notificitationservice.notificationrequestwithdata
 	3, // 9: notificitationservice.notificationservice.sendnotification:output_type -> notificitationservice.notificationresponse
 	4, // 10: notificitationservice.notificationservice.sendbatchnotification:output_type -> notificitationservice.batchnotificationresponse
-	6, // 11: notificitationservice.notificationservice.healthcheck:output_type -> notificitationservice.healthcheckresponse
-	4, // 12: notificitationservice.notificationservice.sendnotiificationacceptingdisasterapidata:output_type -> notificitationservice.batchnotificationresponse
+	7, // 11: notificitationservice.notificationservice.healthcheck:output_type -> notificitationservice.healthcheckresponse
+	5, // 12: notificitationservice.notificationservice.sendnotiificationacceptingdisasterapidata:output_type -> notificitationservice.newbatchnotificationresponse
 	9, // [9:13] is the sub-list for method output_type
 	5, // [5:9] is the sub-list for method input_type
 	5, // [5:5] is the sub-list for extension type_name
@@ -617,7 +701,7 @@ func file_proto_notification_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: unsafe.Slice(unsafe.StringData(file_proto_notification_proto_rawDesc), len(file_proto_notification_proto_rawDesc)),
 			NumEnums:      2,
-			NumMessages:   6,
+			NumMessages:   7,
 			NumExtensions: 0,
 			NumServices:   1,
 		},
