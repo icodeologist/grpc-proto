@@ -14,6 +14,11 @@ service NotificationService {
 
   //Health check // TODO: 
   rpc HealthCheck(HealthCheckRequest) returns (HealthCheckResponse);
+
+  // disaster api sends the request 
+  // along with the data required for sending notiifications
+  // this way i can send and req and reciecve response and also send the  required data
+  rpc SendNotiificationAcceptingDisasterAPIdata(NotificationRequestWithData) returns (BatchNotificationResponse);
 }
 
 // defining the variables
@@ -63,3 +68,12 @@ enum CheckHealthStatuses {
   CheckHealthStatuses status = 1;
 }
 
+
+message NotificationRequestWithData {
+  string user_email = 1;
+  string user_phone_number = 2;
+  string report_type = 3;
+  string report_location = 4;
+  google.protobuf.Timestamp timestamp = 5;
+  NotificationType type = 6; 
+}

@@ -19,9 +19,10 @@ import (
 const _ = grpc.SupportPackageIsVersion9
 
 const (
-	NotificationService_SendNotification_FullMethodName      = "/notificitationService.NotificationService/SendNotification"
-	NotificationService_SendBatchNotification_FullMethodName = "/notificitationService.NotificationService/SendBatchNotification"
-	NotificationService_HealthCheck_FullMethodName           = "/notificitationService.NotificationService/HealthCheck"
+	NotificationService_SendNotification_FullMethodName                          = "/notificitationService.NotificationService/SendNotification"
+	NotificationService_SendBatchNotification_FullMethodName                     = "/notificitationService.NotificationService/SendBatchNotification"
+	NotificationService_HealthCheck_FullMethodName                               = "/notificitationService.NotificationService/HealthCheck"
+	NotificationService_SendNotiificationAcceptingDisasterAPIdata_FullMethodName = "/notificitationService.NotificationService/SendNotiificationAcceptingDisasterAPIdata"
 )
 
 // NotificationServiceClient is the client API for NotificationService service.
@@ -35,6 +36,10 @@ type NotificationServiceClient interface {
 	SendBatchNotification(ctx context.Context, opts ...grpc.CallOption) (grpc.ClientStreamingClient[NotificationRequest, BatchNotificationResponse], error)
 	// Health check // TODO:
 	HealthCheck(ctx context.Context, in *HealthCheckRequest, opts ...grpc.CallOption) (*HealthCheckResponse, error)
+	// disaster api sends the request
+	// along with the data required for sending notiifications
+	// this way i can send and req and reciecve response and also send the  required data
+	SendNotiificationAcceptingDisasterAPIdata(ctx context.Context, in *NotificationRequestWithData, opts ...grpc.CallOption) (*BatchNotificationResponse, error)
 }
 
 type notificationServiceClient struct {
@@ -78,6 +83,16 @@ func (c *notificationServiceClient) HealthCheck(ctx context.Context, in *HealthC
 	return out, nil
 }
 
+func (c *notificationServiceClient) SendNotiificationAcceptingDisasterAPIdata(ctx context.Context, in *NotificationRequestWithData, opts ...grpc.CallOption) (*BatchNotificationResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(BatchNotificationResponse)
+	err := c.cc.Invoke(ctx, NotificationService_SendNotiificationAcceptingDisasterAPIdata_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // NotificationServiceServer is the server API for NotificationService service.
 // All implementations must embed UnimplementedNotificationServiceServer
 // for forward compatibility.
@@ -89,6 +104,10 @@ type NotificationServiceServer interface {
 	SendBatchNotification(grpc.ClientStreamingServer[NotificationRequest, BatchNotificationResponse]) error
 	// Health check // TODO:
 	HealthCheck(context.Context, *HealthCheckRequest) (*HealthCheckResponse, error)
+	// disaster api sends the request
+	// along with the data required for sending notiifications
+	// this way i can send and req and reciecve response and also send the  required data
+	SendNotiificationAcceptingDisasterAPIdata(context.Context, *NotificationRequestWithData) (*BatchNotificationResponse, error)
 	mustEmbedUnimplementedNotificationServiceServer()
 }
 
@@ -107,6 +126,9 @@ func (UnimplementedNotificationServiceServer) SendBatchNotification(grpc.ClientS
 }
 func (UnimplementedNotificationServiceServer) HealthCheck(context.Context, *HealthCheckRequest) (*HealthCheckResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method HealthCheck not implemented")
+}
+func (UnimplementedNotificationServiceServer) SendNotiificationAcceptingDisasterAPIdata(context.Context, *NotificationRequestWithData) (*BatchNotificationResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method SendNotiificationAcceptingDisasterAPIdata not implemented")
 }
 func (UnimplementedNotificationServiceServer) mustEmbedUnimplementedNotificationServiceServer() {}
 func (UnimplementedNotificationServiceServer) testEmbeddedByValue()                             {}
@@ -172,6 +194,24 @@ func _NotificationService_HealthCheck_Handler(srv interface{}, ctx context.Conte
 	return interceptor(ctx, in, info, handler)
 }
 
+func _NotificationService_SendNotiificationAcceptingDisasterAPIdata_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(NotificationRequestWithData)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(NotificationServiceServer).SendNotiificationAcceptingDisasterAPIdata(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: NotificationService_SendNotiificationAcceptingDisasterAPIdata_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(NotificationServiceServer).SendNotiificationAcceptingDisasterAPIdata(ctx, req.(*NotificationRequestWithData))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // NotificationService_ServiceDesc is the grpc.ServiceDesc for NotificationService service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -186,6 +226,10 @@ var NotificationService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "HealthCheck",
 			Handler:    _NotificationService_HealthCheck_Handler,
+		},
+		{
+			MethodName: "SendNotiificationAcceptingDisasterAPIdata",
+			Handler:    _NotificationService_SendNotiificationAcceptingDisasterAPIdata_Handler,
 		},
 	},
 	Streams: []grpc.StreamDesc{
