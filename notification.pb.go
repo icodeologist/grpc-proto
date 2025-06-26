@@ -262,13 +262,14 @@ func (x *Notificationresponse) GetNotificationId() string {
 }
 
 type Batchnotificationresponse struct {
-	state         protoimpl.MessageState `protogen:"open.v1"`
-	TotalSent     int32                  `protobuf:"varint,1,opt,name=total_sent,json=totalSent,proto3" json:"total_sent,omitempty"`
-	Success       int32                  `protobuf:"varint,2,opt,name=success,proto3" json:"success,omitempty"`
-	Failed        int32                  `protobuf:"varint,3,opt,name=failed,proto3" json:"failed,omitempty"`
-	FailedUserId  []string               `protobuf:"bytes,4,rep,name=failed_user_id,json=failedUserId,proto3" json:"failed_user_id,omitempty"`
-	unknownFields protoimpl.UnknownFields
-	sizeCache     protoimpl.SizeCache
+	state                  protoimpl.MessageState `protogen:"open.v1"`
+	TotalSent              int32                  `protobuf:"varint,1,opt,name=total_sent,json=totalSent,proto3" json:"total_sent,omitempty"`
+	Success                int32                  `protobuf:"varint,2,opt,name=success,proto3" json:"success,omitempty"`
+	Failed                 int32                  `protobuf:"varint,3,opt,name=failed,proto3" json:"failed,omitempty"`
+	FailedUserEmails       []string               `protobuf:"bytes,4,rep,name=failed_user_emails,json=failedUserEmails,proto3" json:"failed_user_emails,omitempty"`
+	FailedUserPhoneNumbers []string               `protobuf:"bytes,5,rep,name=failed_user_phone_numbers,json=failedUserPhoneNumbers,proto3" json:"failed_user_phone_numbers,omitempty"`
+	unknownFields          protoimpl.UnknownFields
+	sizeCache              protoimpl.SizeCache
 }
 
 func (x *Batchnotificationresponse) Reset() {
@@ -322,9 +323,16 @@ func (x *Batchnotificationresponse) GetFailed() int32 {
 	return 0
 }
 
-func (x *Batchnotificationresponse) GetFailedUserId() []string {
+func (x *Batchnotificationresponse) GetFailedUserEmails() []string {
 	if x != nil {
-		return x.FailedUserId
+		return x.FailedUserEmails
+	}
+	return nil
+}
+
+func (x *Batchnotificationresponse) GetFailedUserPhoneNumbers() []string {
+	if x != nil {
+		return x.FailedUserPhoneNumbers
 	}
 	return nil
 }
@@ -515,13 +523,14 @@ const file_proto_notification_proto_rawDesc = "" +
 	"\x14notificationresponse\x12\x18\n" +
 	"\asuccess\x18\x01 \x01(\bR\asuccess\x12\x18\n" +
 	"\amessage\x18\x02 \x01(\tR\amessage\x12'\n" +
-	"\x0fnotification_id\x18\x03 \x01(\tR\x0enotificationId\"\x92\x01\n" +
+	"\x0fnotification_id\x18\x03 \x01(\tR\x0enotificationId\"\xd5\x01\n" +
 	"\x19batchnotificationresponse\x12\x1d\n" +
 	"\n" +
 	"total_sent\x18\x01 \x01(\x05R\ttotalSent\x12\x18\n" +
 	"\asuccess\x18\x02 \x01(\x05R\asuccess\x12\x16\n" +
-	"\x06failed\x18\x03 \x01(\x05R\x06failed\x12$\n" +
-	"\x0efailed_user_id\x18\x04 \x03(\tR\ffailedUserId\"0\n" +
+	"\x06failed\x18\x03 \x01(\x05R\x06failed\x12,\n" +
+	"\x12failed_user_emails\x18\x04 \x03(\tR\x10failedUserEmails\x129\n" +
+	"\x19failed_user_phone_numbers\x18\x05 \x03(\tR\x16failedUserPhoneNumbers\"0\n" +
 	"\x12healthcheckrequest\x12\x1a\n" +
 	"\bserivice\x18\x01 \x01(\tR\bserivice\"\xae\x01\n" +
 	"\x13healthcheckresponse\x12V\n" +
