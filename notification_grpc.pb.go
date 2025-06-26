@@ -2,9 +2,9 @@
 // versions:
 // - protoc-gen-go-grpc v1.5.1
 // - protoc             v6.31.1
-// source: notification.proto
+// source: proto/notification.proto
 
-package __
+package proto
 
 import (
 	context "context"
@@ -232,5 +232,5 @@ var Notificationservice_ServiceDesc = grpc.ServiceDesc{
 			ClientStreams: true,
 		},
 	},
-	Metadata: "notification.proto",
+	Metadata: "proto/notification.proto",
 }
