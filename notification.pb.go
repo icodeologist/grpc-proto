@@ -4,7 +4,7 @@
 // 	protoc        v6.31.1
 // source: notification.proto
 
-package proto
+package __
 
 import (
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
@@ -22,134 +22,134 @@ const (
 	_ = protoimpl.EnforceVersion(protoimpl.MaxVersion - 20)
 )
 
-type NotificationType int32
+type Notificationtype int32
 
 const (
-	NotificationType_UNKNOWN NotificationType = 0
-	NotificationType_EMAIL   NotificationType = 1
-	NotificationType_SMS     NotificationType = 2
-	NotificationType_PUSH    NotificationType = 3
+	Notificationtype_unknown Notificationtype = 0
+	Notificationtype_email   Notificationtype = 1
+	Notificationtype_sms     Notificationtype = 2
+	Notificationtype_push    Notificationtype = 3
 )
 
-// Enum value maps for NotificationType.
+// Enum value maps for Notificationtype.
 var (
-	NotificationType_name = map[int32]string{
-		0: "UNKNOWN",
-		1: "EMAIL",
-		2: "SMS",
-		3: "PUSH",
+	Notificationtype_name = map[int32]string{
+		0: "unknown",
+		1: "email",
+		2: "sms",
+		3: "push",
 	}
-	NotificationType_value = map[string]int32{
-		"UNKNOWN": 0,
-		"EMAIL":   1,
-		"SMS":     2,
-		"PUSH":    3,
+	Notificationtype_value = map[string]int32{
+		"unknown": 0,
+		"email":   1,
+		"sms":     2,
+		"push":    3,
 	}
 )
 
-func (x NotificationType) Enum() *NotificationType {
-	p := new(NotificationType)
+func (x Notificationtype) Enum() *Notificationtype {
+	p := new(Notificationtype)
 	*p = x
 	return p
 }
 
-func (x NotificationType) String() string {
+func (x Notificationtype) String() string {
 	return protoimpl.X.EnumStringOf(x.Descriptor(), protoreflect.EnumNumber(x))
 }
 
-func (NotificationType) Descriptor() protoreflect.EnumDescriptor {
+func (Notificationtype) Descriptor() protoreflect.EnumDescriptor {
 	return file_notification_proto_enumTypes[0].Descriptor()
 }
 
-func (NotificationType) Type() protoreflect.EnumType {
+func (Notificationtype) Type() protoreflect.EnumType {
 	return &file_notification_proto_enumTypes[0]
 }
 
-func (x NotificationType) Number() protoreflect.EnumNumber {
+func (x Notificationtype) Number() protoreflect.EnumNumber {
 	return protoreflect.EnumNumber(x)
 }
 
-// Deprecated: Use NotificationType.Descriptor instead.
-func (NotificationType) EnumDescriptor() ([]byte, []int) {
+// Deprecated: Use Notificationtype.Descriptor instead.
+func (Notificationtype) EnumDescriptor() ([]byte, []int) {
 	return file_notification_proto_rawDescGZIP(), []int{0}
 }
 
-type HealthCheckResponse_CheckHealthStatuses int32
+type HealthcheckresponseCheckhealthstatuses int32
 
 const (
-	HealthCheckResponse_UNKNOWN    HealthCheckResponse_CheckHealthStatuses = 0
-	HealthCheckResponse_SERVING    HealthCheckResponse_CheckHealthStatuses = 1
-	HealthCheckResponse_NOTSERVING HealthCheckResponse_CheckHealthStatuses = 2
+	Healthcheckresponse_unknown    HealthcheckresponseCheckhealthstatuses = 0
+	Healthcheckresponse_serving    HealthcheckresponseCheckhealthstatuses = 1
+	Healthcheckresponse_notserving HealthcheckresponseCheckhealthstatuses = 2
 )
 
-// Enum value maps for HealthCheckResponse_CheckHealthStatuses.
+// Enum value maps for HealthcheckresponseCheckhealthstatuses.
 var (
-	HealthCheckResponse_CheckHealthStatuses_name = map[int32]string{
-		0: "UNKNOWN",
-		1: "SERVING",
-		2: "NOTSERVING",
+	HealthcheckresponseCheckhealthstatuses_name = map[int32]string{
+		0: "unknown",
+		1: "serving",
+		2: "notserving",
 	}
-	HealthCheckResponse_CheckHealthStatuses_value = map[string]int32{
-		"UNKNOWN":    0,
-		"SERVING":    1,
-		"NOTSERVING": 2,
+	HealthcheckresponseCheckhealthstatuses_value = map[string]int32{
+		"unknown":    0,
+		"serving":    1,
+		"notserving": 2,
 	}
 )
 
-func (x HealthCheckResponse_CheckHealthStatuses) Enum() *HealthCheckResponse_CheckHealthStatuses {
-	p := new(HealthCheckResponse_CheckHealthStatuses)
+func (x HealthcheckresponseCheckhealthstatuses) Enum() *HealthcheckresponseCheckhealthstatuses {
+	p := new(HealthcheckresponseCheckhealthstatuses)
 	*p = x
 	return p
 }
 
-func (x HealthCheckResponse_CheckHealthStatuses) String() string {
+func (x HealthcheckresponseCheckhealthstatuses) String() string {
 	return protoimpl.X.EnumStringOf(x.Descriptor(), protoreflect.EnumNumber(x))
 }
 
-func (HealthCheckResponse_CheckHealthStatuses) Descriptor() protoreflect.EnumDescriptor {
+func (HealthcheckresponseCheckhealthstatuses) Descriptor() protoreflect.EnumDescriptor {
 	return file_notification_proto_enumTypes[1].Descriptor()
 }
 
-func (HealthCheckResponse_CheckHealthStatuses) Type() protoreflect.EnumType {
+func (HealthcheckresponseCheckhealthstatuses) Type() protoreflect.EnumType {
 	return &file_notification_proto_enumTypes[1]
 }
 
-func (x HealthCheckResponse_CheckHealthStatuses) Number() protoreflect.EnumNumber {
+func (x HealthcheckresponseCheckhealthstatuses) Number() protoreflect.EnumNumber {
 	return protoreflect.EnumNumber(x)
 }
 
-// Deprecated: Use HealthCheckResponse_CheckHealthStatuses.Descriptor instead.
-func (HealthCheckResponse_CheckHealthStatuses) EnumDescriptor() ([]byte, []int) {
+// Deprecated: Use HealthcheckresponseCheckhealthstatuses.Descriptor instead.
+func (HealthcheckresponseCheckhealthstatuses) EnumDescriptor() ([]byte, []int) {
 	return file_notification_proto_rawDescGZIP(), []int{4, 0}
 }
 
 // defining the variables
-type NotificationRequest struct {
+type Notificationrequest struct {
 	state protoimpl.MessageState `protogen:"open.v1"`
-	// TODO : read the protobuf docs  these nums 1 - 15 for binary conversion something
+	// todo : read the protobuf docs  these nums 1 - 15 for binary conversion something
 	UserId        string                 `protobuf:"bytes,1,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`
 	Action        string                 `protobuf:"bytes,2,opt,name=action,proto3" json:"action,omitempty"`
 	Message       string                 `protobuf:"bytes,3,opt,name=message,proto3" json:"message,omitempty"`
 	Timestamp     *timestamppb.Timestamp `protobuf:"bytes,4,opt,name=timestamp,proto3" json:"timestamp,omitempty"`
-	Type          NotificationType       `protobuf:"varint,5,opt,name=type,proto3,enum=notificitationService.NotificationType" json:"type,omitempty"`
+	Type          Notificationtype       `protobuf:"varint,5,opt,name=type,proto3,enum=notificitationservice.Notificationtype" json:"type,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
 
-func (x *NotificationRequest) Reset() {
-	*x = NotificationRequest{}
+func (x *Notificationrequest) Reset() {
+	*x = Notificationrequest{}
 	mi := &file_notification_proto_msgTypes[0]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
 
-func (x *NotificationRequest) String() string {
+func (x *Notificationrequest) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*NotificationRequest) ProtoMessage() {}
+func (*Notificationrequest) ProtoMessage() {}
 
-func (x *NotificationRequest) ProtoReflect() protoreflect.Message {
+func (x *Notificationrequest) ProtoReflect() protoreflect.Message {
 	mi := &file_notification_proto_msgTypes[0]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -161,47 +161,47 @@ func (x *NotificationRequest) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use NotificationRequest.ProtoReflect.Descriptor instead.
-func (*NotificationRequest) Descriptor() ([]byte, []int) {
+// Deprecated: Use Notificationrequest.ProtoReflect.Descriptor instead.
+func (*Notificationrequest) Descriptor() ([]byte, []int) {
 	return file_notification_proto_rawDescGZIP(), []int{0}
 }
 
-func (x *NotificationRequest) GetUserId() string {
+func (x *Notificationrequest) GetUserId() string {
 	if x != nil {
 		return x.UserId
 	}
 	return ""
 }
 
-func (x *NotificationRequest) GetAction() string {
+func (x *Notificationrequest) GetAction() string {
 	if x != nil {
 		return x.Action
 	}
 	return ""
 }
 
-func (x *NotificationRequest) GetMessage() string {
+func (x *Notificationrequest) GetMessage() string {
 	if x != nil {
 		return x.Message
 	}
 	return ""
 }
 
-func (x *NotificationRequest) GetTimestamp() *timestamppb.Timestamp {
+func (x *Notificationrequest) GetTimestamp() *timestamppb.Timestamp {
 	if x != nil {
 		return x.Timestamp
 	}
 	return nil
 }
 
-func (x *NotificationRequest) GetType() NotificationType {
+func (x *Notificationrequest) GetType() Notificationtype {
 	if x != nil {
 		return x.Type
 	}
-	return NotificationType_UNKNOWN
+	return Notificationtype_unknown
 }
 
-type NotificationResponse struct {
+type Notificationresponse struct {
 	state          protoimpl.MessageState `protogen:"open.v1"`
 	Success        bool                   `protobuf:"varint,1,opt,name=success,proto3" json:"success,omitempty"`
 	Message        string                 `protobuf:"bytes,2,opt,name=message,proto3" json:"message,omitempty"`
@@ -210,20 +210,20 @@ type NotificationResponse struct {
 	sizeCache      protoimpl.SizeCache
 }
 
-func (x *NotificationResponse) Reset() {
-	*x = NotificationResponse{}
+func (x *Notificationresponse) Reset() {
+	*x = Notificationresponse{}
 	mi := &file_notification_proto_msgTypes[1]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
 
-func (x *NotificationResponse) String() string {
+func (x *Notificationresponse) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*NotificationResponse) ProtoMessage() {}
+func (*Notificationresponse) ProtoMessage() {}
 
-func (x *NotificationResponse) ProtoReflect() protoreflect.Message {
+func (x *Notificationresponse) ProtoReflect() protoreflect.Message {
 	mi := &file_notification_proto_msgTypes[1]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -235,33 +235,33 @@ func (x *NotificationResponse) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use NotificationResponse.ProtoReflect.Descriptor instead.
-func (*NotificationResponse) Descriptor() ([]byte, []int) {
+// Deprecated: Use Notificationresponse.ProtoReflect.Descriptor instead.
+func (*Notificationresponse) Descriptor() ([]byte, []int) {
 	return file_notification_proto_rawDescGZIP(), []int{1}
 }
 
-func (x *NotificationResponse) GetSuccess() bool {
+func (x *Notificationresponse) GetSuccess() bool {
 	if x != nil {
 		return x.Success
 	}
 	return false
 }
 
-func (x *NotificationResponse) GetMessage() string {
+func (x *Notificationresponse) GetMessage() string {
 	if x != nil {
 		return x.Message
 	}
 	return ""
 }
 
-func (x *NotificationResponse) GetNotificationId() string {
+func (x *Notificationresponse) GetNotificationId() string {
 	if x != nil {
 		return x.NotificationId
 	}
 	return ""
 }
 
-type BatchNotificationResponse struct {
+type Batchnotificationresponse struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	TotalSent     int32                  `protobuf:"varint,1,opt,name=total_sent,json=totalSent,proto3" json:"total_sent,omitempty"`
 	Success       int32                  `protobuf:"varint,2,opt,name=success,proto3" json:"success,omitempty"`
@@ -271,20 +271,20 @@ type BatchNotificationResponse struct {
 	sizeCache     protoimpl.SizeCache
 }
 
-func (x *BatchNotificationResponse) Reset() {
-	*x = BatchNotificationResponse{}
+func (x *Batchnotificationresponse) Reset() {
+	*x = Batchnotificationresponse{}
 	mi := &file_notification_proto_msgTypes[2]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
 
-func (x *BatchNotificationResponse) String() string {
+func (x *Batchnotificationresponse) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*BatchNotificationResponse) ProtoMessage() {}
+func (*Batchnotificationresponse) ProtoMessage() {}
 
-func (x *BatchNotificationResponse) ProtoReflect() protoreflect.Message {
+func (x *Batchnotificationresponse) ProtoReflect() protoreflect.Message {
 	mi := &file_notification_proto_msgTypes[2]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -296,60 +296,60 @@ func (x *BatchNotificationResponse) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use BatchNotificationResponse.ProtoReflect.Descriptor instead.
-func (*BatchNotificationResponse) Descriptor() ([]byte, []int) {
+// Deprecated: Use Batchnotificationresponse.ProtoReflect.Descriptor instead.
+func (*Batchnotificationresponse) Descriptor() ([]byte, []int) {
 	return file_notification_proto_rawDescGZIP(), []int{2}
 }
 
-func (x *BatchNotificationResponse) GetTotalSent() int32 {
+func (x *Batchnotificationresponse) GetTotalSent() int32 {
 	if x != nil {
 		return x.TotalSent
 	}
 	return 0
 }
 
-func (x *BatchNotificationResponse) GetSuccess() int32 {
+func (x *Batchnotificationresponse) GetSuccess() int32 {
 	if x != nil {
 		return x.Success
 	}
 	return 0
 }
 
-func (x *BatchNotificationResponse) GetFailed() int32 {
+func (x *Batchnotificationresponse) GetFailed() int32 {
 	if x != nil {
 		return x.Failed
 	}
 	return 0
 }
 
-func (x *BatchNotificationResponse) GetFailedUserId() []string {
+func (x *Batchnotificationresponse) GetFailedUserId() []string {
 	if x != nil {
 		return x.FailedUserId
 	}
 	return nil
 }
 
-type HealthCheckRequest struct {
+type Healthcheckrequest struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	Serivice      string                 `protobuf:"bytes,1,opt,name=serivice,proto3" json:"serivice,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
 
-func (x *HealthCheckRequest) Reset() {
-	*x = HealthCheckRequest{}
+func (x *Healthcheckrequest) Reset() {
+	*x = Healthcheckrequest{}
 	mi := &file_notification_proto_msgTypes[3]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
 
-func (x *HealthCheckRequest) String() string {
+func (x *Healthcheckrequest) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*HealthCheckRequest) ProtoMessage() {}
+func (*Healthcheckrequest) ProtoMessage() {}
 
-func (x *HealthCheckRequest) ProtoReflect() protoreflect.Message {
+func (x *Healthcheckrequest) ProtoReflect() protoreflect.Message {
 	mi := &file_notification_proto_msgTypes[3]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -361,39 +361,39 @@ func (x *HealthCheckRequest) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use HealthCheckRequest.ProtoReflect.Descriptor instead.
-func (*HealthCheckRequest) Descriptor() ([]byte, []int) {
+// Deprecated: Use Healthcheckrequest.ProtoReflect.Descriptor instead.
+func (*Healthcheckrequest) Descriptor() ([]byte, []int) {
 	return file_notification_proto_rawDescGZIP(), []int{3}
 }
 
-func (x *HealthCheckRequest) GetSerivice() string {
+func (x *Healthcheckrequest) GetSerivice() string {
 	if x != nil {
 		return x.Serivice
 	}
 	return ""
 }
 
-type HealthCheckResponse struct {
-	state         protoimpl.MessageState                  `protogen:"open.v1"`
-	Status        HealthCheckResponse_CheckHealthStatuses `protobuf:"varint,1,opt,name=status,proto3,enum=notificitationService.HealthCheckResponse_CheckHealthStatuses" json:"status,omitempty"`
+type Healthcheckresponse struct {
+	state         protoimpl.MessageState                 `protogen:"open.v1"`
+	Status        HealthcheckresponseCheckhealthstatuses `protobuf:"varint,1,opt,name=status,proto3,enum=notificitationservice.HealthcheckresponseCheckhealthstatuses" json:"status,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
 
-func (x *HealthCheckResponse) Reset() {
-	*x = HealthCheckResponse{}
+func (x *Healthcheckresponse) Reset() {
+	*x = Healthcheckresponse{}
 	mi := &file_notification_proto_msgTypes[4]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
 
-func (x *HealthCheckResponse) String() string {
+func (x *Healthcheckresponse) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*HealthCheckResponse) ProtoMessage() {}
+func (*Healthcheckresponse) ProtoMessage() {}
 
-func (x *HealthCheckResponse) ProtoReflect() protoreflect.Message {
+func (x *Healthcheckresponse) ProtoReflect() protoreflect.Message {
 	mi := &file_notification_proto_msgTypes[4]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -405,44 +405,44 @@ func (x *HealthCheckResponse) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use HealthCheckResponse.ProtoReflect.Descriptor instead.
-func (*HealthCheckResponse) Descriptor() ([]byte, []int) {
+// Deprecated: Use Healthcheckresponse.ProtoReflect.Descriptor instead.
+func (*Healthcheckresponse) Descriptor() ([]byte, []int) {
 	return file_notification_proto_rawDescGZIP(), []int{4}
 }
 
-func (x *HealthCheckResponse) GetStatus() HealthCheckResponse_CheckHealthStatuses {
+func (x *Healthcheckresponse) GetStatus() HealthcheckresponseCheckhealthstatuses {
 	if x != nil {
 		return x.Status
 	}
-	return HealthCheckResponse_UNKNOWN
+	return Healthcheckresponse_unknown
 }
 
-type NotificationRequestWithData struct {
+type Notificationrequestwithdata struct {
 	state           protoimpl.MessageState `protogen:"open.v1"`
 	UserEmail       string                 `protobuf:"bytes,1,opt,name=user_email,json=userEmail,proto3" json:"user_email,omitempty"`
 	UserPhoneNumber string                 `protobuf:"bytes,2,opt,name=user_phone_number,json=userPhoneNumber,proto3" json:"user_phone_number,omitempty"`
 	ReportType      string                 `protobuf:"bytes,3,opt,name=report_type,json=reportType,proto3" json:"report_type,omitempty"`
 	ReportLocation  string                 `protobuf:"bytes,4,opt,name=report_location,json=reportLocation,proto3" json:"report_location,omitempty"`
 	Timestamp       *timestamppb.Timestamp `protobuf:"bytes,5,opt,name=timestamp,proto3" json:"timestamp,omitempty"`
-	Type            NotificationType       `protobuf:"varint,6,opt,name=type,proto3,enum=notificitationService.NotificationType" json:"type,omitempty"`
+	Type            Notificationtype       `protobuf:"varint,6,opt,name=type,proto3,enum=notificitationservice.Notificationtype" json:"type,omitempty"`
 	unknownFields   protoimpl.UnknownFields
 	sizeCache       protoimpl.SizeCache
 }
 
-func (x *NotificationRequestWithData) Reset() {
-	*x = NotificationRequestWithData{}
+func (x *Notificationrequestwithdata) Reset() {
+	*x = Notificationrequestwithdata{}
 	mi := &file_notification_proto_msgTypes[5]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
 
-func (x *NotificationRequestWithData) String() string {
+func (x *Notificationrequestwithdata) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*NotificationRequestWithData) ProtoMessage() {}
+func (*Notificationrequestwithdata) ProtoMessage() {}
 
-func (x *NotificationRequestWithData) ProtoReflect() protoreflect.Message {
+func (x *Notificationrequestwithdata) ProtoReflect() protoreflect.Message {
 	mi := &file_notification_proto_msgTypes[5]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -454,84 +454,84 @@ func (x *NotificationRequestWithData) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use NotificationRequestWithData.ProtoReflect.Descriptor instead.
-func (*NotificationRequestWithData) Descriptor() ([]byte, []int) {
+// Deprecated: Use Notificationrequestwithdata.ProtoReflect.Descriptor instead.
+func (*Notificationrequestwithdata) Descriptor() ([]byte, []int) {
 	return file_notification_proto_rawDescGZIP(), []int{5}
 }
 
-func (x *NotificationRequestWithData) GetUserEmail() string {
+func (x *Notificationrequestwithdata) GetUserEmail() string {
 	if x != nil {
 		return x.UserEmail
 	}
 	return ""
 }
 
-func (x *NotificationRequestWithData) GetUserPhoneNumber() string {
+func (x *Notificationrequestwithdata) GetUserPhoneNumber() string {
 	if x != nil {
 		return x.UserPhoneNumber
 	}
 	return ""
 }
 
-func (x *NotificationRequestWithData) GetReportType() string {
+func (x *Notificationrequestwithdata) GetReportType() string {
 	if x != nil {
 		return x.ReportType
 	}
 	return ""
 }
 
-func (x *NotificationRequestWithData) GetReportLocation() string {
+func (x *Notificationrequestwithdata) GetReportLocation() string {
 	if x != nil {
 		return x.ReportLocation
 	}
 	return ""
 }
 
-func (x *NotificationRequestWithData) GetTimestamp() *timestamppb.Timestamp {
+func (x *Notificationrequestwithdata) GetTimestamp() *timestamppb.Timestamp {
 	if x != nil {
 		return x.Timestamp
 	}
 	return nil
 }
 
-func (x *NotificationRequestWithData) GetType() NotificationType {
+func (x *Notificationrequestwithdata) GetType() Notificationtype {
 	if x != nil {
 		return x.Type
 	}
-	return NotificationType_UNKNOWN
+	return Notificationtype_unknown
 }
 
 var File_notification_proto protoreflect.FileDescriptor
 
 const file_notification_proto_rawDesc = "" +
 	"\n" +
-	"\x12notification.proto\x12\x15notificitationService\x1a\x1fgoogle/protobuf/timestamp.proto\"\xd7\x01\n" +
-	"\x13NotificationRequest\x12\x17\n" +
+	"\x12notification.proto\x12\x15notificitationservice\x1a\x1fgoogle/protobuf/timestamp.proto\"\xd7\x01\n" +
+	"\x13notificationrequest\x12\x17\n" +
 	"\auser_id\x18\x01 \x01(\tR\x06userId\x12\x16\n" +
 	"\x06action\x18\x02 \x01(\tR\x06action\x12\x18\n" +
 	"\amessage\x18\x03 \x01(\tR\amessage\x128\n" +
 	"\ttimestamp\x18\x04 \x01(\v2\x1a.google.protobuf.TimestampR\ttimestamp\x12;\n" +
-	"\x04type\x18\x05 \x01(\x0e2'.notificitationService.NotificationTypeR\x04type\"s\n" +
-	"\x14NotificationResponse\x12\x18\n" +
+	"\x04type\x18\x05 \x01(\x0e2'.notificitationservice.notificationtypeR\x04type\"s\n" +
+	"\x14notificationresponse\x12\x18\n" +
 	"\asuccess\x18\x01 \x01(\bR\asuccess\x12\x18\n" +
 	"\amessage\x18\x02 \x01(\tR\amessage\x12'\n" +
 	"\x0fnotification_id\x18\x03 \x01(\tR\x0enotificationId\"\x92\x01\n" +
-	"\x19BatchNotificationResponse\x12\x1d\n" +
+	"\x19batchnotificationresponse\x12\x1d\n" +
 	"\n" +
 	"total_sent\x18\x01 \x01(\x05R\ttotalSent\x12\x18\n" +
 	"\asuccess\x18\x02 \x01(\x05R\asuccess\x12\x16\n" +
 	"\x06failed\x18\x03 \x01(\x05R\x06failed\x12$\n" +
 	"\x0efailed_user_id\x18\x04 \x03(\tR\ffailedUserId\"0\n" +
-	"\x12HealthCheckRequest\x12\x1a\n" +
+	"\x12healthcheckrequest\x12\x1a\n" +
 	"\bserivice\x18\x01 \x01(\tR\bserivice\"\xae\x01\n" +
-	"\x13HealthCheckResponse\x12V\n" +
-	"\x06status\x18\x01 \x01(\x0e2>.notificitationService.HealthCheckResponse.CheckHealthStatusesR\x06status\"?\n" +
-	"\x13CheckHealthStatuses\x12\v\n" +
-	"\aUNKNOWN\x10\x00\x12\v\n" +
-	"\aSERVING\x10\x01\x12\x0e\n" +
+	"\x13healthcheckresponse\x12V\n" +
+	"\x06status\x18\x01 \x01(\x0e2>.notificitationservice.healthcheckresponse.checkhealthstatusesR\x06status\"?\n" +
+	"\x13checkhealthstatuses\x12\v\n" +
+	"\aunknown\x10\x00\x12\v\n" +
+	"\aserving\x10\x01\x12\x0e\n" +
 	"\n" +
-	"NOTSERVING\x10\x02\"\xa9\x02\n" +
-	"\x1bNotificationRequestWithData\x12\x1d\n" +
+	"notserving\x10\x02\"\xa9\x02\n" +
+	"\x1bnotificationrequestwithdata\x12\x1d\n" +
 	"\n" +
 	"user_email\x18\x01 \x01(\tR\tuserEmail\x12*\n" +
 	"\x11user_phone_number\x18\x02 \x01(\tR\x0fuserPhoneNumber\x12\x1f\n" +
@@ -539,18 +539,17 @@ const file_notification_proto_rawDesc = "" +
 	"reportType\x12'\n" +
 	"\x0freport_location\x18\x04 \x01(\tR\x0ereportLocation\x128\n" +
 	"\ttimestamp\x18\x05 \x01(\v2\x1a.google.protobuf.TimestampR\ttimestamp\x12;\n" +
-	"\x04type\x18\x06 \x01(\x0e2'.notificitationService.NotificationTypeR\x04type*=\n" +
-	"\x10NotificationType\x12\v\n" +
-	"\aUNKNOWN\x10\x00\x12\t\n" +
-	"\x05EMAIL\x10\x01\x12\a\n" +
-	"\x03SMS\x10\x02\x12\b\n" +
-	"\x04PUSH\x10\x032\xf5\x03\n" +
-	"\x13NotificationService\x12k\n" +
-	"\x10SendNotification\x12*.notificitationService.NotificationRequest\x1a+.notificitationService.NotificationResponse\x12w\n" +
-	"\x15SendBatchNotification\x12*.notificitationService.NotificationRequest\x1a0.notificitationService.BatchNotificationResponse(\x01\x12d\n" +
-	"\vHealthCheck\x12).notificitationService.HealthCheckRequest\x1a*.notificitationService.HealthCheckResponse\x12\x91\x01\n" +
-	")SendNotiificationAcceptingDisasterAPIdata\x122.notificitationService.NotificationRequestWithData\x1a0.notificitationService.BatchNotificationResponseB\n" +
-	"Z\b./proto/b\x06proto3"
+	"\x04type\x18\x06 \x01(\x0e2'.notificitationservice.notificationtypeR\x04type*=\n" +
+	"\x10notificationtype\x12\v\n" +
+	"\aunknown\x10\x00\x12\t\n" +
+	"\x05email\x10\x01\x12\a\n" +
+	"\x03sms\x10\x02\x12\b\n" +
+	"\x04push\x10\x032\xf7\x03\n" +
+	"\x13notificationservice\x12k\n" +
+	"\x10sendnotification\x12*.notificitationservice.notificationrequest\x1a+.notificitationservice.notificationresponse\x12w\n" +
+	"\x15sendbatchnotification\x12*.notificitationservice.notificationrequest\x1a0.notificitationservice.batchnotificationresponse(\x01\x12d\n" +
+	"\vhealthcheck\x12).notificitationservice.healthcheckrequest\x1a*.notificitationservice.healthcheckresponse\x12\x93\x01\n" +
+	")sendnotiificationacceptingdisasterapidata\x122.notificitationservice.notificationrequestwithdata\x1a0.notificitationservice.batchnotificationresponse(\x01B\x03Z\x01.b\x06proto3"
 
 var (
 	file_notification_proto_rawDescOnce sync.Once
@@ -567,30 +566,30 @@ func file_notification_proto_rawDescGZIP() []byte {
 var file_notification_proto_enumTypes = make([]protoimpl.EnumInfo, 2)
 var file_notification_proto_msgTypes = make([]protoimpl.MessageInfo, 6)
 var file_notification_proto_goTypes = []any{
-	(NotificationType)(0),                        // 0: notificitationService.NotificationType
-	(HealthCheckResponse_CheckHealthStatuses)(0), // 1: notificitationService.HealthCheckResponse.CheckHealthStatuses
-	(*NotificationRequest)(nil),                  // 2: notificitationService.NotificationRequest
-	(*NotificationResponse)(nil),                 // 3: notificitationService.NotificationResponse
-	(*BatchNotificationResponse)(nil),            // 4: notificitationService.BatchNotificationResponse
-	(*HealthCheckRequest)(nil),                   // 5: notificitationService.HealthCheckRequest
-	(*HealthCheckResponse)(nil),                  // 6: notificitationService.HealthCheckResponse
-	(*NotificationRequestWithData)(nil),          // 7: notificitationService.NotificationRequestWithData
-	(*timestamppb.Timestamp)(nil),                // 8: google.protobuf.Timestamp
+	(Notificationtype)(0),                       // 0: notificitationservice.notificationtype
+	(HealthcheckresponseCheckhealthstatuses)(0), // 1: notificitationservice.healthcheckresponse.checkhealthstatuses
+	(*Notificationrequest)(nil),                 // 2: notificitationservice.notificationrequest
+	(*Notificationresponse)(nil),                // 3: notificitationservice.notificationresponse
+	(*Batchnotificationresponse)(nil),           // 4: notificitationservice.batchnotificationresponse
+	(*Healthcheckrequest)(nil),                  // 5: notificitationservice.healthcheckrequest
+	(*Healthcheckresponse)(nil),                 // 6: notificitationservice.healthcheckresponse
+	(*Notificationrequestwithdata)(nil),         // 7: notificitationservice.notificationrequestwithdata
+	(*timestamppb.Timestamp)(nil),               // 8: google.protobuf.Timestamp
 }
 var file_notification_proto_depIdxs = []int32{
-	8, // 0: notificitationService.NotificationRequest.timestamp:type_name -> google.protobuf.Timestamp
-	0, // 1: notificitationService.NotificationRequest.type:type_name -> notificitationService.NotificationType
-	1, // 2: notificitationService.HealthCheckResponse.status:type_name -> notificitationService.HealthCheckResponse.CheckHealthStatuses
-	8, // 3: notificitationService.NotificationRequestWithData.timestamp:type_name -> google.protobuf.Timestamp
-	0, // 4: notificitationService.NotificationRequestWithData.type:type_name -> notificitationService.NotificationType
-	2, // 5: notificitationService.NotificationService.SendNotification:input_type -> notificitationService.NotificationRequest
-	2, // 6: notificitationService.NotificationService.SendBatchNotification:input_type -> notificitationService.NotificationRequest
-	5, // 7: notificitationService.NotificationService.HealthCheck:input_type -> notificitationService.HealthCheckRequest
-	7, // 8: notificitationService.NotificationService.SendNotiificationAcceptingDisasterAPIdata:input_type -> notificitationService.NotificationRequestWithData
-	3, // 9: notificitationService.NotificationService.SendNotification:output_type -> notificitationService.NotificationResponse
-	4, // 10: notificitationService.NotificationService.SendBatchNotification:output_type -> notificitationService.BatchNotificationResponse
-	6, // 11: notificitationService.NotificationService.HealthCheck:output_type -> notificitationService.HealthCheckResponse
-	4, // 12: notificitationService.NotificationService.SendNotiificationAcceptingDisasterAPIdata:output_type -> notificitationService.BatchNotificationResponse
+	8, // 0: notificitationservice.notificationrequest.timestamp:type_name -> google.protobuf.Timestamp
+	0, // 1: notificitationservice.notificationrequest.type:type_name -> notificitationservice.notificationtype
+	1, // 2: notificitationservice.healthcheckresponse.status:type_name -> notificitationservice.healthcheckresponse.checkhealthstatuses
+	8, // 3: notificitationservice.notificationrequestwithdata.timestamp:type_name -> google.protobuf.Timestamp
+	0, // 4: notificitationservice.notificationrequestwithdata.type:type_name -> notificitationservice.notificationtype
+	2, // 5: notificitationservice.notificationservice.sendnotification:input_type -> notificitationservice.notificationrequest
+	2, // 6: notificitationservice.notificationservice.sendbatchnotification:input_type -> notificitationservice.notificationrequest
+	5, // 7: notificitationservice.notificationservice.healthcheck:input_type -> notificitationservice.healthcheckrequest
+	7, // 8: notificitationservice.notificationservice.sendnotiificationacceptingdisasterapidata:input_type -> notificitationservice.notificationrequestwithdata
+	3, // 9: notificitationservice.notificationservice.sendnotification:output_type -> notificitationservice.notificationresponse
+	4, // 10: notificitationservice.notificationservice.sendbatchnotification:output_type -> notificitationservice.batchnotificationresponse
+	6, // 11: notificitationservice.notificationservice.healthcheck:output_type -> notificitationservice.healthcheckresponse
+	4, // 12: notificitationservice.notificationservice.sendnotiificationacceptingdisasterapidata:output_type -> notificitationservice.batchnotificationresponse
 	9, // [9:13] is the sub-list for method output_type
 	5, // [5:9] is the sub-list for method input_type
 	5, // [5:5] is the sub-list for extension type_name

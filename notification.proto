@@ -1,51 +1,51 @@
 syntax = "proto3";
-option go_package = "./proto/";
-package notificitationService;
+option go_package = ".";
+package notificitationservice;
 
 import "google/protobuf/timestamp.proto";
 
 
-service NotificationService {
+service notificationservice {
   //sending single notifictioon 
-  //NOTE : unary service
-  rpc SendNotification(NotificationRequest) returns (NotificationResponse);
+  //note : unary service
+  rpc sendnotification(notificationrequest) returns (notificationresponse);
   //send stream of notifications 
-  rpc SendBatchNotification(stream NotificationRequest) returns (BatchNotificationResponse);
+  rpc sendbatchnotification(stream notificationrequest) returns (batchnotificationresponse);
 
-  //Health check // TODO: 
-  rpc HealthCheck(HealthCheckRequest) returns (HealthCheckResponse);
+  //health check // todo: 
+  rpc healthcheck(healthcheckrequest) returns (healthcheckresponse);
 
   // disaster api sends the request 
   // along with the data required for sending notiifications
   // this way i can send and req and reciecve response and also send the  required data
-  rpc SendNotiificationAcceptingDisasterAPIdata(stream NotificationRequestWithData) returns (BatchNotificationResponse);
+  rpc sendnotiificationacceptingdisasterapidata(stream notificationrequestwithdata) returns (batchnotificationresponse);
 }
 
 // defining the variables
-message NotificationRequest {
-  // TODO : read the protobuf docs  these nums 1 - 15 for binary conversion something
+message notificationrequest {
+  // todo : read the protobuf docs  these nums 1 - 15 for binary conversion something
   string user_id = 1;
   string action = 2;
   string message = 3;
   google.protobuf.Timestamp timestamp = 4;
-  NotificationType type = 5;
+  notificationtype type = 5;
 }
 
-enum NotificationType {
-  UNKNOWN = 0;
-  EMAIL = 1;
-  SMS = 2;
-  PUSH = 3;
+enum notificationtype {
+  unknown = 0;
+  email = 1;
+  sms = 2;
+  push = 3;
 }
 
 
-message NotificationResponse {
+message notificationresponse {
   bool success = 1;
   string message = 2;
   string notification_id = 3;
 }
 
-message BatchNotificationResponse {
+message batchnotificationresponse {
   int32 total_sent = 1;
   int32 success = 2;
   int32 failed = 3;
@@ -54,26 +54,26 @@ message BatchNotificationResponse {
 
 
 
-message HealthCheckRequest {
+message healthcheckrequest {
   string serivice = 1;
 }
 
-message HealthCheckResponse {
+message healthcheckresponse {
 
-enum CheckHealthStatuses {
-  UNKNOWN = 0;
-  SERVING = 1;
-  NOTSERVING = 2;
+enum checkhealthstatuses {
+  unknown = 0;
+  serving = 1;
+  notserving = 2;
 }
-  CheckHealthStatuses status = 1;
+  checkhealthstatuses status = 1;
 }
 
 
-message NotificationRequestWithData {
+message notificationrequestwithdata {
   string user_email = 1;
   string user_phone_number = 2;
   string report_type = 3;
   string report_location = 4;
   google.protobuf.Timestamp timestamp = 5;
-  NotificationType type = 6; 
+  notificationtype type = 6; 
 }
