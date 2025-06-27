@@ -49,8 +49,8 @@ message batchnotificationresponse {
   int32 total_sent = 1;
   int32 success = 2;
   int32 failed = 3;
-  repeated string failed_user_emails = 4;
-  repeated string failed_user_phone_numbers = 5;
+  repeated string failed_user_ids = 4;
+
 }
 
 message newbatchnotificationresponse {
@@ -79,10 +79,11 @@ enum checkhealthstatuses {
 
 
 message notificationrequestwithdata {
-  string user_email = 1;
-  string user_phone_number = 2;
-  string report_type = 3;
-  string report_location = 4;
-  google.protobuf.Timestamp timestamp = 5;
-  notificationtype type = 6; 
+  string user_id = 1;
+  string user_email = 2;
+  string user_phone_number = 3;
+  string report_type = 4;
+  string report_location = 5;
+  google.protobuf.Timestamp timestamp = 6;
+  notificationtype type = 7; 
 }

@@ -262,14 +262,13 @@ func (x *Notificationresponse) GetNotificationId() string {
 }
 
 type Batchnotificationresponse struct {
-	state                  protoimpl.MessageState `protogen:"open.v1"`
-	TotalSent              int32                  `protobuf:"varint,1,opt,name=total_sent,json=totalSent,proto3" json:"total_sent,omitempty"`
-	Success                int32                  `protobuf:"varint,2,opt,name=success,proto3" json:"success,omitempty"`
-	Failed                 int32                  `protobuf:"varint,3,opt,name=failed,proto3" json:"failed,omitempty"`
-	FailedUserEmails       []string               `protobuf:"bytes,4,rep,name=failed_user_emails,json=failedUserEmails,proto3" json:"failed_user_emails,omitempty"`
-	FailedUserPhoneNumbers []string               `protobuf:"bytes,5,rep,name=failed_user_phone_numbers,json=failedUserPhoneNumbers,proto3" json:"failed_user_phone_numbers,omitempty"`
-	unknownFields          protoimpl.UnknownFields
-	sizeCache              protoimpl.SizeCache
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	TotalSent     int32                  `protobuf:"varint,1,opt,name=total_sent,json=totalSent,proto3" json:"total_sent,omitempty"`
+	Success       int32                  `protobuf:"varint,2,opt,name=success,proto3" json:"success,omitempty"`
+	Failed        int32                  `protobuf:"varint,3,opt,name=failed,proto3" json:"failed,omitempty"`
+	FailedUserIds []string               `protobuf:"bytes,4,rep,name=failed_user_ids,json=failedUserIds,proto3" json:"failed_user_ids,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
 }
 
 func (x *Batchnotificationresponse) Reset() {
@@ -323,16 +322,9 @@ func (x *Batchnotificationresponse) GetFailed() int32 {
 	return 0
 }
 
-func (x *Batchnotificationresponse) GetFailedUserEmails() []string {
+func (x *Batchnotificationresponse) GetFailedUserIds() []string {
 	if x != nil {
-		return x.FailedUserEmails
-	}
-	return nil
-}
-
-func (x *Batchnotificationresponse) GetFailedUserPhoneNumbers() []string {
-	if x != nil {
-		return x.FailedUserPhoneNumbers
+		return x.FailedUserIds
 	}
 	return nil
 }
@@ -503,12 +495,13 @@ func (x *Healthcheckresponse) GetStatus() HealthcheckresponseCheckhealthstatuses
 
 type Notificationrequestwithdata struct {
 	state           protoimpl.MessageState `protogen:"open.v1"`
-	UserEmail       string                 `protobuf:"bytes,1,opt,name=user_email,json=userEmail,proto3" json:"user_email,omitempty"`
-	UserPhoneNumber string                 `protobuf:"bytes,2,opt,name=user_phone_number,json=userPhoneNumber,proto3" json:"user_phone_number,omitempty"`
-	ReportType      string                 `protobuf:"bytes,3,opt,name=report_type,json=reportType,proto3" json:"report_type,omitempty"`
-	ReportLocation  string                 `protobuf:"bytes,4,opt,name=report_location,json=reportLocation,proto3" json:"report_location,omitempty"`
-	Timestamp       *timestamppb.Timestamp `protobuf:"bytes,5,opt,name=timestamp,proto3" json:"timestamp,omitempty"`
-	Type            Notificationtype       `protobuf:"varint,6,opt,name=type,proto3,enum=notificitationservice.Notificationtype" json:"type,omitempty"`
+	UserId          string                 `protobuf:"bytes,1,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`
+	UserEmail       string                 `protobuf:"bytes,2,opt,name=user_email,json=userEmail,proto3" json:"user_email,omitempty"`
+	UserPhoneNumber string                 `protobuf:"bytes,3,opt,name=user_phone_number,json=userPhoneNumber,proto3" json:"user_phone_number,omitempty"`
+	ReportType      string                 `protobuf:"bytes,4,opt,name=report_type,json=reportType,proto3" json:"report_type,omitempty"`
+	ReportLocation  string                 `protobuf:"bytes,5,opt,name=report_location,json=reportLocation,proto3" json:"report_location,omitempty"`
+	Timestamp       *timestamppb.Timestamp `protobuf:"bytes,6,opt,name=timestamp,proto3" json:"timestamp,omitempty"`
+	Type            Notificationtype       `protobuf:"varint,7,opt,name=type,proto3,enum=notificitationservice.Notificationtype" json:"type,omitempty"`
 	unknownFields   protoimpl.UnknownFields
 	sizeCache       protoimpl.SizeCache
 }
@@ -541,6 +534,13 @@ func (x *Notificationrequestwithdata) ProtoReflect() protoreflect.Message {
 // Deprecated: Use Notificationrequestwithdata.ProtoReflect.Descriptor instead.
 func (*Notificationrequestwithdata) Descriptor() ([]byte, []int) {
 	return file_proto_notification_proto_rawDescGZIP(), []int{6}
+}
+
+func (x *Notificationrequestwithdata) GetUserId() string {
+	if x != nil {
+		return x.UserId
+	}
+	return ""
 }
 
 func (x *Notificationrequestwithdata) GetUserEmail() string {
@@ -599,14 +599,13 @@ const file_proto_notification_proto_rawDesc = "" +
 	"\x14notificationresponse\x12\x18\n" +
 	"\asuccess\x18\x01 \x01(\bR\asuccess\x12\x18\n" +
 	"\amessage\x18\x02 \x01(\tR\amessage\x12'\n" +
-	"\x0fnotification_id\x18\x03 \x01(\tR\x0enotificationId\"\xd5\x01\n" +
+	"\x0fnotification_id\x18\x03 \x01(\tR\x0enotificationId\"\x94\x01\n" +
 	"\x19batchnotificationresponse\x12\x1d\n" +
 	"\n" +
 	"total_sent\x18\x01 \x01(\x05R\ttotalSent\x12\x18\n" +
 	"\asuccess\x18\x02 \x01(\x05R\asuccess\x12\x16\n" +
-	"\x06failed\x18\x03 \x01(\x05R\x06failed\x12,\n" +
-	"\x12failed_user_emails\x18\x04 \x03(\tR\x10failedUserEmails\x129\n" +
-	"\x19failed_user_phone_numbers\x18\x05 \x03(\tR\x16failedUserPhoneNumbers\"\xc9\x01\n" +
+	"\x06failed\x18\x03 \x01(\x05R\x06failed\x12&\n" +
+	"\x0ffailed_user_ids\x18\x04 \x03(\tR\rfailedUserIds\"\xc9\x01\n" +
 	"\x1cnewbatchnotificationresponse\x12\x1d\n" +
 	"\n" +
 	"total_sent\x18\x01 \x01(\x05R\ttotalSent\x12\x18\n" +
@@ -622,16 +621,17 @@ const file_proto_notification_proto_rawDesc = "" +
 	"\aunknown\x10\x00\x12\v\n" +
 	"\aserving\x10\x01\x12\x0e\n" +
 	"\n" +
-	"notserving\x10\x02\"\xa9\x02\n" +
-	"\x1bnotificationrequestwithdata\x12\x1d\n" +
+	"notserving\x10\x02\"\xc2\x02\n" +
+	"\x1bnotificationrequestwithdata\x12\x17\n" +
+	"\auser_id\x18\x01 \x01(\tR\x06userId\x12\x1d\n" +
 	"\n" +
-	"user_email\x18\x01 \x01(\tR\tuserEmail\x12*\n" +
-	"\x11user_phone_number\x18\x02 \x01(\tR\x0fuserPhoneNumber\x12\x1f\n" +
-	"\vreport_type\x18\x03 \x01(\tR\n" +
+	"user_email\x18\x02 \x01(\tR\tuserEmail\x12*\n" +
+	"\x11user_phone_number\x18\x03 \x01(\tR\x0fuserPhoneNumber\x12\x1f\n" +
+	"\vreport_type\x18\x04 \x01(\tR\n" +
 	"reportType\x12'\n" +
-	"\x0freport_location\x18\x04 \x01(\tR\x0ereportLocation\x128\n" +
-	"\ttimestamp\x18\x05 \x01(\v2\x1a.google.protobuf.TimestampR\ttimestamp\x12;\n" +
-	"\x04type\x18\x06 \x01(\x0e2'.notificitationservice.notificationtypeR\x04type*=\n" +
+	"\x0freport_location\x18\x05 \x01(\tR\x0ereportLocation\x128\n" +
+	"\ttimestamp\x18\x06 \x01(\v2\x1a.google.protobuf.TimestampR\ttimestamp\x12;\n" +
+	"\x04type\x18\a \x01(\x0e2'.notificitationservice.notificationtypeR\x04type*=\n" +
 	"\x10notificationtype\x12\v\n" +
 	"\aunknown\x10\x00\x12\t\n" +
 	"\x05email\x10\x01\x12\a\n" +
