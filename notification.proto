@@ -18,7 +18,7 @@ service notificationservice {
   // disaster api sends the request 
   // along with the data required for sending notiifications
   // this way i can send and req and reciecve response and also send the  required data
-  rpc sendnotiificationacceptingdisasterapidata(stream notificationrequestwithdata) returns (newbatchnotificationresponse);
+  rpc sendnotiificationacceptingdisasterapidata(stream notificationrequestwithdata) returns (batchnotificationresponse);
 }
 
 // defining the variables

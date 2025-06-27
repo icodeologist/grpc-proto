@@ -636,12 +636,12 @@ const file_proto_notification_proto_rawDesc = "" +
 	"\aunknown\x10\x00\x12\t\n" +
 	"\x05email\x10\x01\x12\a\n" +
 	"\x03sms\x10\x02\x12\b\n" +
-	"\x04push\x10\x032\xfa\x03\n" +
+	"\x04push\x10\x032\xf7\x03\n" +
 	"\x13notificationservice\x12k\n" +
 	"\x10sendnotification\x12*.notificitationservice.notificationrequest\x1a+.notificitationservice.notificationresponse\x12w\n" +
 	"\x15sendbatchnotification\x12*.notificitationservice.notificationrequest\x1a0.notificitationservice.batchnotificationresponse(\x01\x12d\n" +
-	"\vhealthcheck\x12).notificitationservice.healthcheckrequest\x1a*.notificitationservice.healthcheckresponse\x12\x96\x01\n" +
-	")sendnotiificationacceptingdisasterapidata\x122.notificitationservice.notificationrequestwithdata\x1a3.notificitationservice.newbatchnotificationresponse(\x01B\tZ\a./protob\x06proto3"
+	"\vhealthcheck\x12).notificitationservice.healthcheckrequest\x1a*.notificitationservice.healthcheckresponse\x12\x93\x01\n" +
+	")sendnotiificationacceptingdisasterapidata\x122.notificitationservice.notificationrequestwithdata\x1a0.notificitationservice.batchnotificationresponse(\x01B\tZ\a./protob\x06proto3"
 
 var (
 	file_proto_notification_proto_rawDescOnce sync.Once
@@ -682,7 +682,7 @@ var file_proto_notification_proto_depIdxs = []int32{
 	3, // 9: notificitationservice.notificationservice.sendnotification:output_type -> notificitationservice.notificationresponse
 	4, // 10: notificitationservice.notificationservice.sendbatchnotification:output_type -> notificitationservice.batchnotificationresponse
 	7, // 11: notificitationservice.notificationservice.healthcheck:output_type -> notificitationservice.healthcheckresponse
-	5, // 12: notificitationservice.notificationservice.sendnotiificationacceptingdisasterapidata:output_type -> notificitationservice.newbatchnotificationresponse
+	4, // 12: notificitationservice.notificationservice.sendnotiificationacceptingdisasterapidata:output_type -> notificitationservice.batchnotificationresponse
 	9, // [9:13] is the sub-list for method output_type
 	5, // [5:9] is the sub-list for method input_type
 	5, // [5:5] is the sub-list for extension type_name
